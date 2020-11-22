@@ -58,7 +58,7 @@ class CategoryController extends Controller
 
     public function delete($slug)
     {
-        $category = City::where(['slug' => $slug])->firstOrFail();
+        $category = Category::where(['slug' => $slug])->firstOrFail();
         $category->delete();
 
         return redirect('categories');

@@ -10,7 +10,7 @@
                     <div class="kt-portlet__head">
                         <div class="kt-portlet__head-label">
                             <h3 class="kt-portlet__head-title">
-                                Добавяне на нов имот
+                                Редактиране
                             </h3>
                         </div>
                     </div>
@@ -35,17 +35,21 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="type">Тип:</label>
-                                <textarea name="type" class="form-control text-warning @error('type') border-danger @enderror" id="type">{{ $property->type }}</textarea>
+                                <label for="category">Тип:</label>
+                                @foreach($property->categories as $category)
+                                    <input type="text" name="category" class="form-control @error('category') border-danger @enderror" id="category" value="{{ $category->name }}">
+                                @endforeach
 
-                                @error('type')
-                                <p class="text-danger"> {{ $errors->first('type') }}</p>
+                                @error('category')
+                                <p class="text-danger"> {{ $errors->first('category') }}</p>
                                 @enderror
                             </div>
 
                             <div class="form-group">
-                                <label for="rooms">Бр. стаи:</label>
-                                    <textarea name="rooms" class="form-control @error('rooms') border-danger @enderror" id="rooms" placeholder="Бр. стаи">{{ $property->rooms }}</textarea>
+                                <label for="rooms">Етаж</label>
+                                @foreach($property->floors as $floor)
+                                    <input type="text" name="floor" class="form-control @error('floor') border-danger @enderror" id="floor" value="{{ $floor->name }}">
+                                @endforeach
 
                                 @error('rooms')
                                 <p class="text-danger"> {{ $errors->first('rooms') }}</p>
@@ -62,30 +66,15 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="balcony">Балкон</label>
-                                    <textarea name="balcony" class="form-control @error('balcony') border-danger @enderror" id="balcony" placeholder="Балкон">{{ $property->balcony }}</textarea>
+                                <label for="city">Град:</label>
+                                @foreach($property->cities as $city)
+                                    <input type="text" name="city" class="form-control @error('city') border-danger @enderror" id="city"  value="{{ $city->name }}">
+                                @endforeach
 
-                                @error('balcony')
-                                <p class="text-danger"> {{ $errors->first('balcony') }}</p>
+                                @error('city')
+                                <p class="text-danger"> {{ $errors->first('city') }}</p>
                                 @enderror
                             </div>
-
-                            <div class="form-group">
-                                <label for="location">Локация:</label>
-                                    <textarea name="location" class="form-control @error('location') border-danger @enderror" id="location" placeholder="Адрес">{{ $property->location }}</textarea>
-
-                                @error('location')
-                                <p class="text-danger"> {{ $errors->first('location') }}</p>
-                                @enderror
-                            </div>
-
-{{--                            <div class="col-md-6" id="image_name">--}}
-{{--                                <input type="file" name="image_name" class="form-control"> {{ $property->image_name }}--}}
-{{--                                <img src="/css/images/{{ $property->image_name }}" style="width: 200px;">,m54--}}
-{{--                                @error('image_name')--}}
-{{--                                <p class="text-danger"> {{ $errors->first('image_name') }}</p>--}}
-{{--                                @enderror--}}
-{{--                            </div>--}}
                         </div>
 
                         <div class="kt-portlet__foot">

@@ -28,16 +28,24 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Fonts -->
 
 		<!--begin::Global Theme Styles(used by all pages) -->
-		<link href="admin/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="admin/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+{{--		<link href="admin/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />--}}
+{{--		<link href="admin/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />--}}
+
+		<link rel="stylesheet" href="{{ URL::asset('admin/assets/plugins/global/plugins.bundle.css') }}"/>
+		<link rel="stylesheet" href="{{ URL::asset('admin/assets/css/style.bundle.css') }}"/>
 
 		<!--end::Global Theme Styles -->
 
 		<!--begin::Layout Skins(used by all pages) -->
-		<link href="admin/assets/css/skins/header/base/light.css" rel="stylesheet" type="text/css" />
-		<link href="admin/assets/css/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
-		<link href="admin/assets/css/skins/brand/dark.css" rel="stylesheet" type="text/css" />
-		<link href="admin/assets/css/skins/aside/dark.css" rel="stylesheet" type="text/css" />
+{{--		<link href="admin/assets/css/skins/header/base/light.css" rel="stylesheet" type="text/css" />--}}
+{{--		<link href="admin/assets/css/skins/header/menu/light.css" rel="stylesheet" type="text/css" />--}}
+{{--		<link href="admin/assets/css/skins/brand/dark.css" rel="stylesheet" type="text/css" />--}}
+{{--		<link href="admin/assets/css/skins/aside/dark.css" rel="stylesheet" type="text/css" />--}}
+
+		<link rel="stylesheet" href="{{ URL::asset('admin/assets/css/skins/header/base/light.css') }}"/>
+		<link rel="stylesheet" href="{{ URL::asset('admin/assets/css/skins/header/menu/light.css') }}"/>
+		<link rel="stylesheet" href="{{ URL::asset('admin/assets/css/skins/brand/dark.css') }}"/>
+		<link rel="stylesheet" href="{{ URL::asset('admin/assets/css/skins/aside/dark.css') }}"/>
 
 		<!--end::Layout Skins -->
 		<link rel="shortcut icon" href="admin/assets/media/logos/favicon.ico" />
@@ -78,8 +86,8 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!-- begin:: Aside -->
 					<div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
 						<div class="kt-aside__brand-logo">
-							<a href="/">
-								<img alt="Logo" src="admin/assets/media/logos/logo-light.png" />
+							<a href="/properties">
+								<h5>Начална страница</h5>
 							</a>
 						</div>
 						<div class="kt-aside__brand-tools">
@@ -471,8 +479,14 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!-- end::Global Config -->
 
 		<!--begin::Global Theme Bundle(used by all pages) -->
-		<script src="admin/assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
-		<script src="admin/assets/js/scripts.bundle.js" type="text/javascript"></script>
+{{--		<script src="admin/assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>--}}
+{{--		<script src="admin/assets/js/scripts.bundle.js" type="text/javascript"></script>--}}
+{{--		<link rel="stylesheet" href="{{ URL::asset('admin/assets/plugins/global/plugins.bundle.js') }}"/>--}}
+{{--		<link rel="stylesheet" href="{{ URL::asset('admin/assets/js/scripts.bundle.js') }}"/>--}}
+
+
+		<script src="{{ URL::asset('admin/assets/plugins/global/plugins.bundle.js') }}" type="text/javascript"></script>
+		<script src="{{ URL::asset('admin/assets/js/scripts.bundle.js') }}" type="text/javascript"></script>
 
 		<!--end::Global Theme Bundle -->
 	</body>

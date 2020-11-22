@@ -7,6 +7,7 @@ use App\City;
 use App\Floor;
 use App\Property;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PropertyController extends Controller
 {
@@ -30,6 +31,14 @@ class PropertyController extends Controller
             $properties = Property::with('floors')->whereHas('floors', function ($query) {
                 $query->where('slug', request()->floor);
             })->get();
+        } elseif (request()->price == 'asc') {
+            $properties = Property::with('categories')->orderBy('price', 'ASC')->get();
+        } elseif (request()->price == 'desc') {
+            $properties = Property::with('categories')->orderBy('price', 'DESC')->get();
+        } elseif (request()->created == 'asc') {
+            $properties = Property::with('categories')->orderBy('created_at', 'ASC')->get();
+        } elseif (request()->created == 'desc') {
+            $properties = Property::with('categories')->orderBy('created_at', 'DESC')->get();
         }
 
         else {
@@ -75,21 +84,17 @@ class PropertyController extends Controller
         $property->cities()->sync(request('cities'));
         $property->floors()->sync(request('floors'));
 
-//        $category = new Category();
-//        $category->name = request('name');
-//        $category->slug = \Str::slug(request('name'));
-//        $category->id=request('id');
-
-//        $category->save();
-
         return redirect('properties');
     }
 
     public function edit($slug)
     {
         $property = Property::where(['slug' => $slug])->firstOrFail();
+        $categories = Category::all();
+        $cities = City::all();
+        $floors = Floor::all();
 
-        return view('edit', compact('property'));
+        return view('edit', compact('property', 'categories', 'cities', 'floors'));
     }
 
     public function update($slug)
@@ -103,8 +108,8 @@ class PropertyController extends Controller
 
         $property->title = request('title');
         $property->slug = \Str::slug(request('title'));
-        $property->excerpt = request('excerpt');
-        $property->body = request('body');
+        $property->price = request('price');
+
 
         if (!empty(request('image_name'))) { $property->image_name = request('image_name'); }
 

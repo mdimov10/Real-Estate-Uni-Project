@@ -21,7 +21,7 @@
                         <div class="kt-portlet__body">
                             <div class="form-group">
                                 <label for="name">Име</label>
-                                <input type="text" name="name" class="form-control @error('name') border-danger @enderror" id="name" placeholder="Име на града" value="{{ old('name') }}">
+                                <input type="text" name="name" class="form-control @error('name') border-danger @enderror" id="name" placeholder="Име" value="{{ old('name') }}">
 
                                 @error('name')
                                 <p class="text-danger"> {{ $errors->first('name') }}</p>
