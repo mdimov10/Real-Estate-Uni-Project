@@ -12,11 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('front.homepage');
+});
+
+Route::get('/landing', function () {
+    return view('front.landing');
 });
 
 //Properties
-Route::get('properties', 'PropertyController@list')->name('properties.index');
+Route::get('properties', 'PropertyController@listAll')->name('properties.index');
+Route::get('properties/{slug}', 'PropertyController@show')->name('properties.show');
 Route::post('properties', 'PropertyController@store');
 Route::get('properties/create', 'PropertyController@create');
 Route::get('properties/{slug}/edit', 'PropertyController@edit');

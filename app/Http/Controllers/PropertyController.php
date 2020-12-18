@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class PropertyController extends Controller
 {
-    public function list()
+    public function listAll()
     {
         if(request()->category) {
             $properties = Property::with('categories')->whereHas('categories', function ($query) {
@@ -52,7 +52,15 @@ class PropertyController extends Controller
         $cities = City::all();
         $floors = Floor::all();
 
-        return view('properties', compact('properties', 'categories', 'cities', 'floors'));
+        return view('front.properties_list', compact('properties', 'categories', 'cities', 'floors'));
+    }
+
+    public function show($slug) {
+        $property = Property::where('slug', $slug)->firstOrFail();
+
+        $relatedProperties = Property::latest()->limit(4)->get();
+
+        return view('front.property', compact('property', 'relatedProperties'));
     }
 
     public function create()

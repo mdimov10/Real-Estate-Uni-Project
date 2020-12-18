@@ -25,7 +25,7 @@ class PropertySeeder extends Seeder
             'title' =>'Имот 2',
             'description' => 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500',
             'price' => '500',
-            'image_name' => 'apartament2.jpg'
+            'image_name' => '2.jpg'
         ]);
 
         Property::create([
@@ -41,7 +41,7 @@ class PropertySeeder extends Seeder
             'title' =>'Имот 4',
             'description' => 'specimen book. It has survived not only five centuries, but also the leap into elec',
             'price' => '650',
-            'image_name' => 'apartament4.jpg'
+            'image_name' => '4.jpg'
         ]);
 
         Property::create([
@@ -49,7 +49,7 @@ class PropertySeeder extends Seeder
             'title' =>'Имот 5',
             'description' => 'specimen book. It has survived not only five centuries, but also the leap into elec',
             'price' => '400',
-            'image_name' => 'apartament5.jpg'
+            'image_name' => '5.jpg'
         ]);
 
         Property::create([
@@ -65,7 +65,7 @@ class PropertySeeder extends Seeder
             'title' =>'Имот 7',
             'description' => 'Lorem Ipsum has been the industrys standard dummy text ever since the 1500',
             'price' => '525',
-            'image_name' => 'apartament2.jpg'
+            'image_name' => '2.jpg'
         ]);
 
         Property::create([
@@ -81,7 +81,7 @@ class PropertySeeder extends Seeder
             'title' =>'Имот 9',
             'description' => 'It has survived not only five centuries, but also the leap into elec',
             'price' => '666',
-            'image_name' => 'apartament4.jpg'
+            'image_name' => '4.jpg'
         ]);
 
         Property::create([
@@ -89,7 +89,7 @@ class PropertySeeder extends Seeder
             'title' =>'Имот 10',
             'description' => 'specimen book, but also the leap into elec',
             'price' => '900',
-            'image_name' => 'apartament5.jpg'
+            'image_name' => '5.jpg'
         ]);
 
         Property::create([
